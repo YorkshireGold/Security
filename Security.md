@@ -2,7 +2,7 @@
 - [Container Security](#Container-Security)
 - [Linux Security](#Linux-Security)
 
-## Container Security 
+# Container Security 
 Important Terms:
 - Host: Physical or virtual system that hte containers run on
 - Daemon: the software process that manages the container and the isolation between the containers and the host and between each other 
@@ -14,12 +14,31 @@ Important Terms:
 
 " You need the lowere layers secured first otherwise its all for nothing", butthey all need protecting ultimately, Host/Daemon, Images, Containers Orchestration Layer.
 
-### TLDR
+### TLDR - Container Security
 - Defense in depth -Principle of least privledge
-- PAtch and keep things up to date.
+- Patch and keep things up to date.
 - Don't run as Root
 - Use Audit logging 
 - in Docker files use COPY instead of ADD.
+
+### Where most fall down when it comes to Container Security
+- Missing default network policies 
+    - No policies defined OR policies that allow broad communication between all pods in a namespace
+    - Missing egress controls
+
+- Pod-to-pod communication weaknesses: 
+    - Missing encryption and/or authentication/authorization
+
+- Improper Secrets Management 
+    - Hard coded or non-unique secrets
+    - Secrets not injected securely at run/deploy time
+    - Improper storage of secrets
+    
+- Insufficient scanning of final container images – Configuration vulnerabilities, OpenSourceVulnerabilities, Secrets in image
+
+- Missing/insufficient logging –Generation of application and/or data related security events,  Analysis/alerting of relevant security events
+
+- Insufficient processes to rapidly refresh running containers or update workers/masters in the event of a critical vulnerability
 
 ### Secureing the Host and the Daemon
 - Harden the same as a critical system 
