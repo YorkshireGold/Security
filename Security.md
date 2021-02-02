@@ -546,3 +546,21 @@ The takeaway here is that rsyslog offerers remote logging where as journald does
 ### Useing logwatch for log analysis
 
 One of the solutions for log analysis is logwatch. logwatch runs from a cronjob. OS you can see it in the cron.daily. Configurations setting are set in a `logwatch.conf` file. You can run an up to date log with `logwatch --range all` which will include todays messages. 
+
+
+## Threat Modeling 
+
+### STRIDE and DREAD
+**STRIDE**  is  a  threat  modeling  methodology  that  is  performed  in  the  design  phase  of  software  development  in  which  threats  are  grouped  and  categorized  into the following six categories.■Spoofing – Impersonating another user or process
+- Tampering – Unauthorized alterations that impact integrity
+- Repudiation – Cannot prove the action; deniability of claim
+- Information Disclosure – Exposure of information to unauthorized user or process that impact confidentiality
+- Denial of Service – Service interruption that impacts availability
+- Elevation  of  privilege  –  Unauthorized  increase  of  user  or  process  rights 
+
+**DREAD**  is  a  risk  calculation  or  rating  methodology  that  is  often  used  in  conjunction with STRIDE, but does not need to be. To overcome inconsistencies and  qualitative  risk  ratings  (such  as  High,  Medium  and  Low),  the  DREAD  methodology aims to arrive at rating the identified (and categorized) threats by applying the following five dimensions.
+- Damage potential – What will be the impact upon exploitability?
+- Reproducibility – What is the ease of recreating the attack/exploit?
+- Exploitability – What minimum skill level is necessary to launch the attack/exploit?
+- Affected  users  –  How  many  users  will  be  potentially  impacted  upon a successful attack/exploit?
+- Discoverability – What is the ease of finding the vulnerability that yields the threat?
