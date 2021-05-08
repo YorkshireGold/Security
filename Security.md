@@ -171,6 +171,11 @@ High level recomendations
     - [Cloud Native Security Overview](https://kubernetes.io/docs/concepts/security/overview/)
     - [Sysdig's Kubernetes Security Guide](https://sysdig.com/wp-content/uploads/2019/01/kubernetes-security-guide.pdf)
 
+### Kubernernetes  ( TODO: finish writing this section ) 
+Juicy artefacts in K8s are:
+- the serviceacount token               # authenticates services to the kubeapiserver
+- the serviceacount ca.crt                 
+
 # Linux Security
 
 ## MAC( Mandatory access Control) and DAC ( Discretionary Access Control )
